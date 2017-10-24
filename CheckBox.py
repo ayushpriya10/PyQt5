@@ -12,8 +12,11 @@ class Window(QWidget):
 
     def initUI(self):
 
+        #Creating the instance of QCheckBox class.
         checkBox = QCheckBox('This is a CheckBox', self)
         checkBox.move(150, 20)
+
+        #Toggle method to check state.
         checkBox.toggle()
         checkBox.stateChanged.connect(self.changeText)
 
@@ -27,6 +30,7 @@ class Window(QWidget):
 
     def changeText(self, state):
 
+        #Comparing state of checkbox with Qt's checked state indicator.
         if state == Qt.Checked:
             self.label.setText('Checked! :)')
         else:
